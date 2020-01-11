@@ -1,0 +1,13 @@
+<div>
+    <div>
+        <div>
+            {{range .topics}}
+            <div class="topic">
+                <div class="comments">{{.Comments}}</div>
+                <div class="title"><a href="{{.Link | id}}">{{.Title}}</a></div>
+            </div>
+            {{end}}
+        </div>
+    </div>
+    <div></div>
+</div>
