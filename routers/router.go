@@ -8,4 +8,5 @@ import (
 
 func init() {
 	beego.Router("/", &controllers.IndexController{}, "get:Home")
+	beego.Router("/t/:id", &controllers.IndexController{}, "get:Topic")
 }

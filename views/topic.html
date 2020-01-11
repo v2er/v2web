@@ -1,0 +1,26 @@
+<style>
+.publish{font-size: 12px;color: #aaa;}
+</style>
+
+<div>
+    <h3>{{.data.Topic.Title}}</h3>
+    <div>{{.data.Body | html}}</div>
+    <div>
+        {{range .data.Replies}}
+        <hr>
+        <div>
+            <div class="content">{{.Content | html}}</div>
+            <div class="publish">{{.Publish}}</div>
+        </div>
+        {{end}}
+    </div>
+    <div class="page">
+        {{range .data.ReplyPageMax | page}}
+            {{if eq $.data.ReplyPage .}}
+            <span>{{.}}</span>
+            {{else}}
+            <a href="?p={{.}}">{{.}}</a>
+            {{end}}
+        {{end}}
+    </div>
+</div>

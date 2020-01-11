@@ -4,7 +4,7 @@
             {{range .topics}}
             <div class="topic">
                 <div class="comments">{{.Comments}}</div>
-                <div class="title"><a href="{{.Link | id}}">{{.Title}}</a></div>
+                <div class="title"><a href="/t/{{.Link | id}}">{{.Title}}</a></div>
             </div>
             {{end}}
         </div>

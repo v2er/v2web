@@ -10,3 +10,13 @@ func (c *IndexController) Home() {
 	c.Data["topics"] = topics
 	c.Tpl("home.html", "V2EX")
 }
+
+func (c *IndexController) Topic() {
+	id, _ := c.GetInt64(":id")
+	page, _ := c.GetInt("p")
+
+	data, err := c.client.Content(id, page)
+	c.OnError(err)
+	c.Data["data"] = data
+	c.Tpl("topic.html", data.Topic.Title)
+}
